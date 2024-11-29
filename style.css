@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+html {
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+body {
+    height: auto;
+}
+
+:root {
+    --white-color: #fff;
+    --black-color: #000
+}
+
+.artist__title {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 3.2rem;
+    text-decoration: none;
+    font-family: 'Courier Prime';
+    padding-bottom: 32px;
+    font-weight: normal;
+    font-style: italic;
+    color: var(--white-color);
+    cursor:pointer
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.artist1__img,
+.artist2__img,
+.artist3__img {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 250px;
+    height: 250px;
+    margin: 50px;
+    opacity: 0.6;
+    transition: all ease 0.2s;
+    cursor:pointer;
+    display: block;
+}
+
+.artist1__img:hover,
+.artist2__img:hover,
+.artist3__img:hover {
+    opacity: 1;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes fadeOut {
+    from {
+        scale: 1;
+        opacity: 1;
+    }
+    to {
+        scale: 0;
+        opacity: 0;
+    }
+}
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 150vh;
+    background: #151F28;
+}
+
+.box:hover{
+    animation-play-state: paused;
+    
+}
+.box {
+    position: relative;
+    width: 150px;
+    height: 250px;
+    padding: 20px;
+    margin: 30px auto 10px auto;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: animate 30s linear infinite;
+    transition: all ease 0.2s;
+}
+@keyframes animate {
+    0%{
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100%{
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+.box span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(240px);
+}
+
+.box span::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
+}
+
+.box span img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
